@@ -5,7 +5,7 @@ use poise::serenity_prelude as serenity;
 
 #[tokio::main]
 async fn main() {
-    let config::Env {token, guilds, ..} = config::read_config("Config.toml");
+    let config::Env {token, guilds, ..} = config::read_config("Config.toml").unwrap();
 
     let intents = serenity::GatewayIntents::non_privileged();
 
